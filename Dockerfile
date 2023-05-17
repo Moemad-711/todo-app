@@ -4,7 +4,7 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm install
 COPY . .
-RUN npm run build
+RUN npm run build --openssl-legacy-provider
 
 # production stage
 FROM nginx:stable-alpine as production-stage
