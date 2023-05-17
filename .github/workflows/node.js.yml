@@ -27,10 +27,12 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm install -g yarn
-    - run: yarn
+    - run: yarn install
     - run: yarn test:unit
-    # - run: npm run test:e2e
+    - run: npm run test:e2e
+    - run: export NODE_OPTIONS = "--openssl-legacy-provider"
     - run: yarn build --if-present
+
   dockerize:
     needs: build
     runs-on: ubuntu-latest
