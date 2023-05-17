@@ -32,8 +32,8 @@ jobs:
     # - run: npm run test:e2e
     - run: npm -g i eslint-cli
     - run: eslint --ext js,vue --fix
-    # - run: export NODE_OPTIONS = "--openssl-legacy-provider"
-    - run: yarn build --openssl-legacy-provider --if-present
+    - run: export NODE_OPTIONS="--openssl-legacy-provider"
+    - run: yarn build --if-present
 
   dockerize:
     needs: build
