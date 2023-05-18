@@ -15,11 +15,11 @@ To run unit tests, run
 yarn test:unit
 ```
 
-To run the e2e tests, run
+## Running the Application Using the Docker Container
+
 ```bash
-yarn test:e2e
+docker run -it -p 8080:80 --rm --name todo-app-1 moemad711/todo-app-34ml
 ```
-You can use the `--headless` parameter, to skip the UI
 
 ## Details
 
@@ -43,39 +43,6 @@ The App also incorporates a few extra features, that were on the "nice to have" 
 5. Edit tasks
 6. Persist tasks between refreshes via Local Storage
 
-## Tech behind
 
-**Styling:**
-* SCSS
-* Bulma - minimal CSS Framework, stripped down to only the components I use. Mostly for buttons and inputs
 
-**Bundler:** 
-* Vue CLI 4
 
-**Quality:** 
-* ESLint Standard preset + Vue-ESLint Recommended.
-
-**Testing:**
-* Unit: Jest + Vue Test Utils
-* E2E: Cypress
-
-## TODO:
-
-From the list of requirements, I still have to:
-
- - [ ] Add a few more tests. Mostly integration, on TodoItem and RecycledTodoItem.
- - [ ] Improve JSDoc types.
-
-As the task is to create a relatively simple ToDo app, there are a few things I would improve/add on top: 
-
- - [ ] Add LocalStorage fallback for browsers that have it blocked (Safari sometimes does this).
- - [ ] Allow selecting multiple items at once
- - [ ] Add cross tab support
- - [ ] Improve design - its not the prettiest thing
- - [ ] Improve accessibility - have not focused on it at all
- - [ ] Add keyboard only navigation support
- - [ ] Categorizing and Filtering (Category, Date, Status, Content search)
- - [ ] Allow completing all visible items and vice versa. (would go well with above)
- - [ ] Integrate with an API for extended features. 
- - [ ] Could allow anonymous usage via LocalStorage and API integration for logged-in users.
- - [ ] Add offline support (PWA).
